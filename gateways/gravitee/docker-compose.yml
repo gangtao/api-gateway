@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-version: '3.5'
+version: '3.7'
 
 networks:
   frontend:
@@ -64,7 +64,7 @@ services:
     container_name: gio_apim_gateway
     restart: always
     ports:
-      - "8082:8082"
+      - "8080:8082"
     depends_on:
       - mongodb
       - elasticsearch
@@ -77,6 +77,13 @@ services:
     networks:
       - storage
       - frontend
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 2048M
+        reservations:
+          memory: 2048M
 
   management_api:
     image: graviteeio/apim-management-api:${APIM_VERSION:-3}
@@ -128,3 +135,60 @@ services:
       - ./logs/apim-portal-ui:/var/log/nginx
     networks:
       - frontend
+  
+  goapi:
+    image: naughtytao/goapi:0.1
+    ports:
+      - "18000:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+    networks:
+      - frontend
+
+  nodeapi:
+    image: naughtytao/nodeapi:0.1
+    ports:
+      - "18001:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+    networks:
+      - frontend
+
+  flaskapi:
+    image: naughtytao/flaskapi:0.1
+    ports:
+      - "18002:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+    networks:
+      - frontend
+
+  springapi:
+    image: naughtytao/springapi:0.1
+    ports:
+      - "18003:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+    networks:
+      - frontend
+  

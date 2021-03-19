@@ -1,29 +1,18 @@
 version: '3.7'
 services:
-  tyk-gateway:
-    image: tykio/tyk-gateway:v3.1.1
+  gateway:
+    image: naughtytao/zuulgateway:0.1 
     ports:
       - 8080:8080
     volumes:
-      - ./tyk.standalone.conf:/opt/tyk-gateway/tyk.conf
-      - ./apps:/opt/tyk-gateway/apps
-      - ./middleware:/opt/tyk-gateway/middleware
-      - ./certs:/opt/tyk-gateway/certs
-    environment:
-      - TYK_GW_SECRET=foo
-    depends_on:
-      - tyk-redis
+      - ./config/application.properties:/usr/src/app/config/application.properties
     deploy:
       resources:
         limits:
-          cpus: '1'
-          memory: 256M
+          cpus: '4'
+          memory: 2048M
         reservations:
-          memory: 256M
-  tyk-redis:
-    image: redis:5.0-alpine
-    ports:
-      - 6379:6379
+          memory: 2048M
 
   goapi:
     image: naughtytao/goapi:0.1
