@@ -1,0 +1,14 @@
+{
+    "uri": "/springapi/*",
+    "plugins": {
+        "proxy-rewrite": {
+            "regex_uri": ["^/springapi(.*)$","$1"]
+        }
+    },
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "springapi:8080": 1
+        }
+    }
+}

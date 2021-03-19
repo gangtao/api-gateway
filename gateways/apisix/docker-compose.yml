@@ -10,7 +10,7 @@ services:
     - "9000:9000"
     networks:
       apisix:
-        ipv4_address: 172.18.5.15
+        ipv4_address: 172.18.5.18
 
   apisix:
     image: apache/apisix:2.3-alpine
@@ -22,11 +22,18 @@ services:
       - etcd
     ##network_mode: host
     ports:
-      - "9080:9080/tcp"
+      - "8080:9080/tcp"
       - "9443:9443/tcp"
     networks:
       apisix:
         ipv4_address: 172.18.5.11
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
 
   etcd:
     image: bitnami/etcd:3.4.9
@@ -45,32 +52,64 @@ services:
     networks:
       apisix:
         ipv4_address: 172.18.5.10
-
-  web1:
-    image: nginx:1.18.0-alpine
-    restart: always
-    volumes:
-      - ./upstream/web1.conf:/etc/nginx/nginx.conf
+  
+  goapi:
+    image: naughtytao/goapi:0.1
     ports:
-      - "9081:80/tcp"
-    environment:
-      - NGINX_PORT=80
+      - "18000:8080"
     networks:
       apisix:
-        ipv4_address: 172.18.5.12
-
-  web2:
-    image: nginx:1.18.0-alpine
-    restart: always
-    volumes:
-      - ./upstream/web2.conf:/etc/nginx/nginx.conf
+        ipv4_address: 172.18.5.14
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  nodeapi:
+    image: naughtytao/nodeapi:0.1
     ports:
-      - "9082:80/tcp"
-    environment:
-      - NGINX_PORT=80
+      - "18001:8080"
     networks:
       apisix:
-        ipv4_address: 172.18.5.13
+        ipv4_address: 172.18.5.15
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  flaskapi:
+    image: naughtytao/flaskapi:0.1
+    ports:
+      - "18002:8080"
+    networks:
+      apisix:
+        ipv4_address: 172.18.5.16
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  springapi:
+    image: naughtytao/springapi:0.1
+    ports:
+      - "18003:8080"
+    networks:
+      apisix:
+        ipv4_address: 172.18.5.17
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  
 
 networks:
   apisix:

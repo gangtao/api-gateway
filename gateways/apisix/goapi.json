@@ -1,0 +1,14 @@
+{
+    "uri": "/goapi/*",
+    "plugins": {
+        "proxy-rewrite": {
+            "regex_uri": ["^/goapi(.*)$","$1"]
+        }
+    },
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "goapi:8080": 1
+        }
+    }
+}

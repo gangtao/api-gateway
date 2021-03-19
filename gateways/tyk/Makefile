@@ -4,8 +4,7 @@ addapi:
 		-s \
 		-H "Content-Type: application/json" \
 		-X POST \
-		-d '{
-			"name": "Test API",
+		-d '{"name": "Test API",
 			"slug": "test-api",
 			"api_id": "1",
 			"org_id": "1",

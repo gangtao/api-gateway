@@ -1,0 +1,14 @@
+{
+    "uri": "/nodeapi/*",
+    "plugins": {
+        "proxy-rewrite": {
+            "regex_uri": ["^/nodeapi(.*)$","$1"]
+        }
+    },
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "nodeapi:8080": 1
+        }
+    }
+}

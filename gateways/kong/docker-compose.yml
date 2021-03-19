@@ -8,46 +8,6 @@ networks:
     external: false
 
 services:
-  kong-migrations:
-    image: "${KONG_DOCKER_TAG:-kong:latest}"
-    command: kong migrations bootstrap
-    depends_on:
-      - db
-    environment:
-      KONG_DATABASE: postgres
-      KONG_PG_DATABASE: ${KONG_PG_DATABASE:-kong}
-      KONG_PG_HOST: db
-      KONG_PG_USER: ${KONG_PG_USER:-kong}
-      KONG_PG_PASSWORD_FILE: /run/secrets/kong_postgres_password
-    secrets:
-      - kong_postgres_password
-    networks:
-      - kong-net
-    restart: on-failure
-    deploy:
-      restart_policy:
-        condition: on-failure
-
-  kong-migrations-up:
-    image: "${KONG_DOCKER_TAG:-kong:latest}"
-    command: kong migrations up && kong migrations finish
-    depends_on:
-      - db
-    environment:
-      KONG_DATABASE: postgres
-      KONG_PG_DATABASE: ${KONG_PG_DATABASE:-kong}
-      KONG_PG_HOST: db
-      KONG_PG_USER: ${KONG_PG_USER:-kong}
-      KONG_PG_PASSWORD_FILE: /run/secrets/kong_postgres_password
-    secrets:
-      - kong_postgres_password
-    networks:
-      - kong-net
-    restart: on-failure
-    deploy:
-      restart_policy:
-        condition: on-failure
-
   kong:
     image: "${KONG_DOCKER_TAG:-kong:latest}"
     user: "${KONG_USER:-kong}"
@@ -70,7 +30,7 @@ services:
     networks:
       - kong-net
     ports:
-      - "8000:8000/tcp"
+      - "8080:8000/tcp"
       - "127.0.0.1:8001:8001/tcp"
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
@@ -83,6 +43,12 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
     
   db:
     image: postgres:9.5
@@ -107,6 +73,59 @@ services:
       - kong-net
     volumes:
       - kong_data:/var/lib/postgresql/data
+
+  goapi:
+    image: naughtytao/goapi:0.1
+    ports:
+      - "18000:8080"
+    networks:
+      - kong-net
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  nodeapi:
+    image: naughtytao/nodeapi:0.1
+    ports:
+      - "18001:8080"
+    networks:
+      - kong-net
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  flaskapi:
+    image: naughtytao/flaskapi:0.1
+    ports:
+      - "18002:8080"
+    networks:
+      - kong-net
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  springapi:
+    image: naughtytao/springapi:0.1
+    ports:
+      - "18003:8080"
+    networks:
+      - kong-net
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
 
 secrets:
   kong_postgres_password:

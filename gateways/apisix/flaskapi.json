@@ -1,0 +1,14 @@
+{
+    "uri": "/flaskapi/*",
+    "plugins": {
+        "proxy-rewrite": {
+            "regex_uri": ["^/flaskapi(.*)$","$1"]
+        }
+    },
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "flaskapi:8080": 1
+        }
+    }
+}
