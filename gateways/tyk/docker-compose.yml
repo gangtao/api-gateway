@@ -1,0 +1,67 @@
+version: '3.3'
+services:
+  tyk-gateway:
+    image: tykio/tyk-gateway:v3.1.1
+    ports:
+      - 8080:8080
+    volumes:
+      - ./tyk.standalone.conf:/opt/tyk-gateway/tyk.conf
+      - ./apps:/opt/tyk-gateway/apps
+      - ./middleware:/opt/tyk-gateway/middleware
+      - ./certs:/opt/tyk-gateway/certs
+    environment:
+      - TYK_GW_SECRET=foo
+    depends_on:
+      - tyk-redis
+  tyk-redis:
+    image: redis:5.0-alpine
+    ports:
+      - 6379:6379
+
+  goapi:
+    image: naughtytao/goapi:0.1
+    ports:
+      - "18000:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+
+  nodeapi:
+    image: naughtytao/nodeapi:0.1
+    ports:
+      - "18001:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+
+  flaskapi:
+    image: naughtytao/flaskapi:0.1
+    ports:
+      - "18002:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+
+  springapi:
+    image: naughtytao/springapi:0.1
+    ports:
+      - "18003:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M

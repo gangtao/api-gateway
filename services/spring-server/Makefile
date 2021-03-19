@@ -1,4 +1,4 @@
-BIN_NAME ?= javaapi
+BIN_NAME ?= springapi
 VERSION ?= 0.1
 IMAGE_NAME ?= $(BIN_NAME):$(VERSION)
 DOCKER_ID_USER ?= naughtytao

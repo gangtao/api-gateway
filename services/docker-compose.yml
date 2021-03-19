@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  goapi:
+    container_name: goapi
+    image: naughtytao/goapi:0.1
+    ports:
+      - "18000:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  nodeapi:
+    container_name: nodeapi
+    image: naughtytao/nodeapi:0.1
+    ports:
+      - "18001:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  flaskapi:
+    container_name: flaskapi
+    image: naughtytao/flaskapi:0.1
+    ports:
+      - "18002:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M
+  springapi:
+    container_name: springapi
+    image: naughtytao/springapi:0.1
+    ports:
+      - "18003:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+        reservations:
+          memory: 256M

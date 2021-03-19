@@ -52,14 +52,14 @@ public class PetsApiController implements PetsApi {
 
     public ResponseEntity<Void> createPets() {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
 
     public ResponseEntity<Pets> listPets(@Parameter(in = ParameterIn.QUERY, description = "How many items to return at one time (max 100)" ,schema=@Schema()) @Valid @RequestParam(value = "limit", required = false) Integer limit) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<Pets>(objectMapper.readValue("[ {\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n}, {\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n} ]", Pets.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<Pets>(objectMapper.readValue("[ {\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n}, {\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n} ]", Pets.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<Pets>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -73,7 +73,7 @@ public class PetsApiController implements PetsApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<Pet>(objectMapper.readValue("{\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n}", Pet.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<Pet>(objectMapper.readValue("{\n  \"name\" : \"name\",\n  \"id\" : 0,\n  \"tag\" : \"tag\"\n}", Pet.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<Pet>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -1,0 +1,935 @@
+21:37:16.461 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - Loading Gravitee configuration.
+21:37:16.517 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - 	Gravitee configuration loaded from /opt/graviteeio-gateway/config/gravitee.yml
+21:37:16.673 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - Loading Gravitee configuration. DONE
+21:37:16.696 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - Loading plugin handlers
+21:37:16.712 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - Find 7 plugin handler(s):
+21:37:16.715 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.discovery.internal.ServiceDiscoveryPluginHandler
+21:37:16.717 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.policy.internal.PolicyPluginHandler
+21:37:16.719 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.node.plugins.service.handler.ServicePluginHandler
+21:37:16.722 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.gateway.repository.plugins.RepositoryPluginHandler
+21:37:16.723 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.node.reporter.plugin.ReporterPluginHandler
+21:37:16.725 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.alert.internal.AlertPluginHandler
+21:37:16.726 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.resource.internal.ResourcePluginHandler
+21:37:16.919 [graviteeio-node] [] INFO  i.g.n.c.NodeDeployerFactoriesLoader - Loading instances for type io.gravitee.node.api.NodeDeployer
+21:37:16.951 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope MANAGEMENT: mongodb
+21:37:16.951 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope RATE_LIMIT: mongodb
+21:37:16.952 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope CACHE: ehcache
+21:37:18.391 [graviteeio-node] [] WARN  c.h.i.HazelcastInstanceFactory - Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+21:37:20.663 [graviteeio-node] [] WARN  com.hazelcast.instance.Node - [172.22.0.5]:5701 [dev] [3.12.9] No join method is enabled! Starting standalone.
+21:37:21.075 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /apis [io.gravitee.gateway.handlers.api.manager.endpoint.ApisManagementEndpoint]
+21:37:21.084 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /apis/:apiId [io.gravitee.gateway.handlers.api.manager.endpoint.ApiManagementEndpoint]
+21:37:21.688 [graviteeio-node] [] INFO  i.g.node.container.AbstractContainer - Starting Gravitee.io - API Gateway...
+21:37:21.689 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - Gravitee.io - API Gateway is now starting...
+21:37:21.690 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: Reactor
+21:37:21.690 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.gateway.reactor.impl.DefaultReactor
+21:37:21.691 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener DefaultReactor for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:37:21.693 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: VertxEmbeddedContainer
+21:37:21.694 [graviteeio-node] [] INFO  i.g.g.s.vertx.VertxEmbeddedContainer - Starting Vertx container and deploy Gateway Verticles [16 instance(s)]
+21:37:21.816 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ClusterService
+21:37:21.817 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: PluginEventListener
+21:37:21.817 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.plugin.core.internal.PluginEventListener
+21:37:21.817 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener PluginEventListener for event type class io.gravitee.plugin.core.api.PluginEvent
+21:37:21.818 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: PluginRegistry
+21:37:21.823 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.plugin.core.internal.PluginRegistryImpl
+21:37:21.823 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Initializing plugin registry.
+21:37:21.824 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugins from /opt/graviteeio-gateway/plugins
+21:37:21.852 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-http-signature-1.0.0.zip
+21:37:22.215 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-http-signature-1.0.0/gravitee-policy-http-signature-1.0.0.jar
+21:37:22.222 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-quota-1.11.0.zip
+21:37:22.232 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-quota-1.11.0/gravitee-policy-quota-1.11.0.jar
+21:37:22.234 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-gateway-bridge-http-server-3.6.0.zip
+21:37:22.249 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-gateway-bridge-http-server-3.6.0/gravitee-repository-gateway-bridge-http-server-3.6.0.jar
+21:37:22.252 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-oauth2-provider-generic-1.15.0.zip
+21:37:22.285 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-oauth2-provider-generic-1.15.0/gravitee-resource-oauth2-provider-generic-1.15.0.jar
+21:37:22.303 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-heartbeat-3.6.0.zip
+21:37:22.315 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-heartbeat-3.6.0/gravitee-gateway-services-heartbeat-3.6.0.jar
+21:37:22.316 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-node-services-healthcheck-1.10.0.zip
+21:37:22.322 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-node-services-healthcheck-1.10.0/gravitee-node-services-healthcheck-1.10.0.jar
+21:37:22.325 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-spikearrest-1.11.0.zip
+21:37:22.351 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-spikearrest-1.11.0/gravitee-policy-spikearrest-1.11.0.jar
+21:37:22.360 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-role-based-access-control-1.1.0.zip
+21:37:22.377 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-role-based-access-control-1.1.0/gravitee-policy-role-based-access-control-1.1.0.jar
+21:37:22.378 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-mongodb-3.6.0.zip
+21:37:22.724 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-mongodb-3.6.0/gravitee-repository-mongodb-3.6.0.jar
+21:37:22.742 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-transformqueryparams-1.6.0.zip
+21:37:22.775 [vert.x-eventloop-thread-13] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.795 [vert.x-eventloop-thread-3] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.795 [vert.x-eventloop-thread-4] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.805 [vert.x-eventloop-thread-2] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.805 [vert.x-eventloop-thread-1] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.806 [vert.x-eventloop-thread-15] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.807 [vert.x-eventloop-thread-14] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.808 [vert.x-eventloop-thread-9] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.808 [vert.x-eventloop-thread-12] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.808 [vert.x-eventloop-thread-11] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.809 [vert.x-eventloop-thread-5] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.808 [vert.x-eventloop-thread-0] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.809 [vert.x-eventloop-thread-6] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.809 [vert.x-eventloop-thread-8] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.809 [vert.x-eventloop-thread-7] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.809 [vert.x-eventloop-thread-10] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:37:22.813 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-transformqueryparams-1.6.0/gravitee-policy-transformqueryparams-1.6.0.jar
+21:37:22.816 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-rest-to-soap-1.11.0.zip
+21:37:22.834 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-rest-to-soap-1.11.0/gravitee-policy-rest-to-soap-1.11.0.jar
+21:37:22.837 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-validation-1.1.0.zip
+21:37:22.863 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-validation-1.1.0/gravitee-policy-xml-validation-1.1.0.jar
+21:37:22.867 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-service-discovery-consul-1.2.0.zip
+21:37:22.894 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-service-discovery-consul-1.2.0/gravitee-service-discovery-consul-1.2.0.jar
+21:37:22.896 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-endpoint-discovery-3.6.0.zip
+21:37:22.903 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-endpoint-discovery-3.6.0/gravitee-gateway-services-endpoint-discovery-3.6.0.jar
+21:37:22.903 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-healthcheck-3.6.0.zip
+21:37:22.909 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-healthcheck-3.6.0/gravitee-gateway-services-healthcheck-3.6.0.jar
+21:37:22.910 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ipfiltering-1.7.0.zip
+21:37:22.951 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ipfiltering-1.7.0/gravitee-policy-ipfiltering-1.7.0.jar
+21:37:22.953 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-html-json-1.6.0.zip
+21:37:22.971 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-html-json-1.6.0/gravitee-policy-html-json-1.6.0.jar
+21:37:22.972 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-callout-http-1.12.0.zip
+21:37:22.979 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-callout-http-1.12.0/gravitee-policy-callout-http-1.12.0.jar
+21:37:22.981 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-regex-threat-protection-1.2.0.zip
+21:37:22.988 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-regex-threat-protection-1.2.0/gravitee-policy-regex-threat-protection-1.2.0.jar
+21:37:22.990 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-latency-1.3.0.zip
+21:37:22.997 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-latency-1.3.0/gravitee-policy-latency-1.3.0.jar
+21:37:22.998 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-dynamic-routing-1.11.0.zip
+21:37:23.005 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-dynamic-routing-1.11.0/gravitee-policy-dynamic-routing-1.11.0.jar
+21:37:23.007 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-groovy-1.12.1.zip
+21:37:23.087 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-groovy-1.12.1/gravitee-policy-groovy-1.12.1.jar
+21:37:23.088 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-to-json-1.6.0.zip
+21:37:23.107 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-to-json-1.6.0/gravitee-policy-json-to-json-1.6.0.jar
+21:37:23.108 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-resource-filtering-1.8.0.zip
+21:37:23.115 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-resource-filtering-1.8.0/gravitee-policy-resource-filtering-1.8.0.jar
+21:37:23.117 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-override-http-method-1.3.0.zip
+21:37:23.123 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-override-http-method-1.3.0/gravitee-policy-override-http-method-1.3.0.jar
+21:37:23.125 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-xml-1.0.0.zip
+21:37:23.134 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-xml-1.0.0/gravitee-policy-json-xml-1.0.0.jar
+21:37:23.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-jws-1.3.0.zip
+21:37:23.149 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-jws-1.3.0/gravitee-policy-jws-1.3.0.jar
+21:37:23.150 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-transformheaders-1.8.0.zip
+21:37:23.157 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-transformheaders-1.8.0/gravitee-policy-transformheaders-1.8.0.jar
+21:37:23.159 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-reporter-elasticsearch-3.6.0.zip
+21:37:23.209 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-reporter-elasticsearch-3.6.0/gravitee-reporter-elasticsearch-3.6.0.jar
+21:37:23.211 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-apikey-2.2.0.zip
+21:37:23.217 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-apikey-2.2.0/gravitee-policy-apikey-2.2.0.jar
+21:37:23.218 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ratelimit-1.11.0.zip
+21:37:23.225 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ratelimit-1.11.0/gravitee-policy-ratelimit-1.11.0.jar
+21:37:23.226 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ssl-enforcement-1.2.0.zip
+21:37:23.233 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ssl-enforcement-1.2.0/gravitee-policy-ssl-enforcement-1.2.0.jar
+21:37:23.236 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-json-1.7.0.zip
+21:37:23.246 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-json-1.7.0/gravitee-policy-xml-json-1.7.0.jar
+21:37:23.247 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-cockpit-connectors-ws-1.0.0.zip
+21:37:23.261 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-cockpit-connectors-ws-1.0.0/gravitee-cockpit-connectors-ws-1.0.0.jar
+21:37:23.262 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-threat-protection-1.2.0.zip
+21:37:23.268 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-threat-protection-1.2.0/gravitee-policy-json-threat-protection-1.2.0.jar
+21:37:23.269 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-request-content-limit-1.7.0.zip
+21:37:23.276 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-request-content-limit-1.7.0/gravitee-policy-request-content-limit-1.7.0.jar
+21:37:23.277 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-localregistry-3.6.0.zip
+21:37:23.281 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-localregistry-3.6.0/gravitee-gateway-services-localregistry-3.6.0.jar
+21:37:23.282 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-node-services-monitoring-1.10.0.zip
+21:37:23.286 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-node-services-monitoring-1.10.0/gravitee-node-services-monitoring-1.10.0.jar
+21:37:23.287 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xslt-1.6.0.zip
+21:37:23.343 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xslt-1.6.0/gravitee-policy-xslt-1.6.0.jar
+21:37:23.344 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-openid-connect-userinfo-1.4.0.zip
+21:37:23.350 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-openid-connect-userinfo-1.4.0/gravitee-policy-openid-connect-userinfo-1.4.0.jar
+21:37:23.352 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-generate-jwt-1.5.0.zip
+21:37:23.357 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-generate-jwt-1.5.0/gravitee-policy-generate-jwt-1.5.0.jar
+21:37:23.358 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-jwt-1.17.0.zip
+21:37:23.377 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-jwt-1.17.0/gravitee-policy-jwt-1.17.0.jar
+21:37:23.378 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-threat-protection-1.2.0.zip
+21:37:23.407 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-threat-protection-1.2.0/gravitee-policy-xml-threat-protection-1.2.0.jar
+21:37:23.409 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-gateway-bridge-http-client-3.6.0.zip
+21:37:23.437 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-gateway-bridge-http-client-3.6.0/gravitee-repository-gateway-bridge-http-client-3.6.0.jar
+21:37:23.438 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-validation-1.6.0.zip
+21:37:23.556 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-validation-1.6.0/gravitee-policy-json-validation-1.6.0.jar
+21:37:23.560 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-url-rewriting-1.4.0.zip
+21:37:23.570 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-url-rewriting-1.4.0/gravitee-policy-url-rewriting-1.4.0.jar
+21:37:23.571 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-sync-3.6.0.zip
+21:37:23.577 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-sync-3.6.0/gravitee-gateway-services-sync-3.6.0.jar
+21:37:23.578 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-assign-content-1.6.0.zip
+21:37:23.602 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-assign-content-1.6.0/gravitee-policy-assign-content-1.6.0.jar
+21:37:23.603 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-cache-1.9.0.zip
+21:37:23.614 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-cache-1.9.0/gravitee-policy-cache-1.9.0.jar
+21:37:23.615 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-oauth2-provider-am-1.13.0.zip
+21:37:23.621 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-oauth2-provider-am-1.13.0/gravitee-resource-oauth2-provider-am-1.13.0.jar
+21:37:23.622 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-assign-attributes-1.5.0.zip
+21:37:23.632 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-assign-attributes-1.5.0/gravitee-policy-assign-attributes-1.5.0.jar
+21:37:23.633 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-retry-1.1.0.zip
+21:37:23.646 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-retry-1.1.0/gravitee-policy-retry-1.1.0.jar
+21:37:23.649 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-keyless-1.3.0.zip
+21:37:23.654 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-keyless-1.3.0/gravitee-policy-keyless-1.3.0.jar
+21:37:23.655 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-request-validation-1.11.0.zip
+21:37:23.662 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-request-validation-1.11.0/gravitee-policy-request-validation-1.11.0.jar
+21:37:23.663 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-reporter-file-2.1.0.zip
+21:37:23.746 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-reporter-file-2.1.0/gravitee-reporter-file-2.1.0.jar
+21:37:23.748 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-oauth2-1.15.0.zip
+21:37:23.754 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-oauth2-1.15.0/gravitee-policy-oauth2-1.15.0.jar
+21:37:23.756 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-ratelimit-1.11.0.zip
+21:37:23.897 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-ratelimit-1.11.0/gravitee-gateway-services-ratelimit-1.11.0.jar
+21:37:23.898 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-mock-1.12.0.zip
+21:37:23.907 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-mock-1.12.0/gravitee-policy-mock-1.12.0.jar
+21:37:23.908 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-jdbc-3.6.0.zip
+21:37:23.945 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-jdbc-3.6.0/gravitee-repository-jdbc-3.6.0.jar
+21:37:23.947 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-cache-1.4.0.zip
+21:37:24.089 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-cache-1.4.0/gravitee-resource-cache-1.4.0.jar
+21:37:24.105 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available policy: 
+21:37:24.106 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> http-signature [1.0.0] has been loaded
+21:37:24.107 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> quota [1.11.0] has been loaded
+21:37:24.107 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> spike-arrest [1.11.0] has been loaded
+21:37:24.110 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rbac [1.1.0] has been loaded
+21:37:24.110 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> transform-queryparams [1.6.0] has been loaded
+21:37:24.113 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rest-to-soap [1.11.0] has been loaded
+21:37:24.113 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-validation [1.1.0] has been loaded
+21:37:24.114 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ip-filtering [1.7.0] has been loaded
+21:37:24.114 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> html-json [1.6.0] has been loaded
+21:37:24.115 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-http-callout [1.12.0] has been loaded
+21:37:24.116 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> regex-threat-protection [1.2.0] has been loaded
+21:37:24.118 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> latency [1.3.0] has been loaded
+21:37:24.118 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> dynamic-routing [1.11.0] has been loaded
+21:37:24.119 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> groovy [1.12.1] has been loaded
+21:37:24.120 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-to-json [1.6.0] has been loaded
+21:37:24.120 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> resource-filtering [1.8.0] has been loaded
+21:37:24.123 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-override-request-method [1.3.0] has been loaded
+21:37:24.124 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-xml [1.0.0] has been loaded
+21:37:24.127 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> jws [1.3.0] has been loaded
+21:37:24.128 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> transform-headers [1.8.0] has been loaded
+21:37:24.129 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> api-key [2.2.0] has been loaded
+21:37:24.129 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rate-limit [1.11.0] has been loaded
+21:37:24.134 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ssl-enforcement [1.2.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-json [1.7.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-threat-protection [1.2.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> request-content-limit [1.7.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xslt [1.6.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-openid-userinfo [1.4.0] has been loaded
+21:37:24.136 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-generate-jwt [1.5.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> jwt [1.17.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-threat-protection [1.2.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-validation [1.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> url-rewriting [1.4.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-assign-content [1.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cache [1.9.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-assign-attributes [1.5.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> retry [1.1.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> key-less [1.3.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-request-validation [1.11.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2 [1.15.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> mock [1.12.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available service: 
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> service-bridge-http-server [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> heartbeat [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> node-healthcheck [1.10.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> service-endpoint-discovery [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> healthcheck [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> localregistry [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> node-monitoring [1.10.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> sync [3.6.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ratelimitasync [1.11.0] has been loaded
+21:37:24.137 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available resource: 
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2 [1.15.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2-am-resource [1.13.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cache [1.4.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available repository: 
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-mongodb [3.6.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-bridge-http-client [3.6.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-jdbc [3.6.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available service_discovery: 
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> consul-service-discovery [1.2.0] has been loaded
+21:37:24.138 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available reporter: 
+21:37:24.139 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> elastic [3.6.0] has been loaded
+21:37:24.139 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> file [2.1.0] has been loaded
+21:37:24.139 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available cockpit: 
+21:37:24.139 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cockpit-connectors-ws [1.0.0] has been loaded
+21:37:24.139 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - All plugins have been loaded. Installing...
+21:37:24.143 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing repository plugins...
+21:37:24.165 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-bridge-http-client [io.gravitee.repository.bridge.client.HttpBridgeRepository]
+21:37:24.177 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-mongodb [io.gravitee.repository.mongodb.MongoRepository]
+21:37:24.178 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Repository [MANAGEMENT] loaded by mongodb
+21:37:28.620 [graviteeio-node] [] WARN  c.g.d.core.el.ELExpressionFactory - javax.el is not supported; Failed to resolve ExpressionFactory, com.sun.el.ExpressionFactoryImpl
+21:37:30.642 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Repository [RATE_LIMIT] loaded by mongodb
+21:37:30.992 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-jdbc [io.gravitee.repository.jdbc.JdbcRepository]
+21:37:30.993 [graviteeio-node] [] WARN  i.g.g.r.p.RepositoryPluginHandler - Repository scope MANAGEMENT already loaded by io.gravitee.repository.mongodb.MongoRepository@55880c
+21:37:30.993 [graviteeio-node] [] WARN  i.g.g.r.p.RepositoryPluginHandler - Repository scope RATE_LIMIT already loaded by io.gravitee.repository.mongodb.MongoRepository@55880c
+21:37:30.993 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing service_discovery plugins...
+21:37:30.993 [graviteeio-node] [] INFO  i.g.p.d.i.ServiceDiscoveryPluginHandler - Install plugin: consul-service-discovery [io.gravitee.discovery.consul.ConsulServiceDiscovery]
+21:37:31.231 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing policy plugins...
+21:37:31.231 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-openid-userinfo [io.gravitee.policy.openid.userinfo.UserInfoPolicy]
+21:37:31.239 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: groovy [io.gravitee.policy.groovy.GroovyPolicy]
+21:37:31.260 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: cache [io.gravitee.policy.cache.CachePolicy]
+21:37:31.274 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rest-to-soap [io.gravitee.policy.rest2soap.RestToSoapTransformerPolicy]
+21:37:31.281 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-validation [io.gravitee.policy.xmlvalidation.XmlValidationPolicy]
+21:37:31.289 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-threat-protection [io.gravitee.policy.threatprotection.json.JsonThreatProtectionPolicy]
+21:37:31.295 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: latency [io.gravitee.policy.latency.LatencyPolicy]
+21:37:31.300 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: regex-threat-protection [io.gravitee.policy.threatprotection.regex.RegexThreatProtectionPolicy]
+21:37:31.307 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-threat-protection [io.gravitee.policy.threatprotection.xml.XmlThreatProtectionPolicy]
+21:37:31.313 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: retry [io.gravitee.policy.retry.RetryPolicy]
+21:37:31.320 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: jws [io.gravitee.policy.jws.JWSPolicy]
+21:37:31.329 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: html-json [io.gravitee.policy.html2Json.HTMLToJSONTransformationPolicy]
+21:37:31.334 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: transform-queryparams [io.gravitee.policy.transformqueryparams.TransformQueryParametersPolicy]
+21:37:31.339 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: dynamic-routing [io.gravitee.policy.dynamicrouting.DynamicRoutingPolicy]
+21:37:31.347 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rbac [io.gravitee.policy.rbac.RoleBasedAccessControlPolicy]
+21:37:31.352 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: resource-filtering [io.gravitee.policy.resourcefiltering.ResourceFilteringPolicy]
+21:37:31.365 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-override-request-method [io.gravitee.policy.overriderequestmethod.OverrideRequestMethodPolicy]
+21:37:31.370 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-request-validation [io.gravitee.policy.requestvalidation.RequestValidationPolicy]
+21:37:31.386 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: mock [io.gravitee.policy.mock.MockPolicy]
+21:37:31.409 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-json [io.gravitee.policy.xml2json.XmlToJsonTransformationPolicy]
+21:37:31.431 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: http-signature [io.gravitee.policy.httpsignature.HttpSignaturePolicy]
+21:37:31.439 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-to-json [io.gravitee.policy.json2json.JsonToJsonTransformationPolicy]
+21:37:31.447 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: ssl-enforcement [io.gravitee.policy.sslenforcement.SslEnforcementPolicy]
+21:37:31.452 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: api-key [io.gravitee.policy.apikey.ApiKeyPolicy]
+21:37:31.458 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rate-limit [io.gravitee.policy.ratelimit.RateLimitPolicy]
+21:37:31.465 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: jwt [io.gravitee.policy.jwt.JWTPolicy]
+21:37:31.485 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-generate-jwt [io.gravitee.policy.generatejwt.GenerateJwtPolicy]
+21:37:31.498 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-assign-content [io.gravitee.policy.assigncontent.AssignContentPolicy]
+21:37:31.507 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: spike-arrest [io.gravitee.policy.spike.SpikeArrestPolicy]
+21:37:31.517 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: url-rewriting [io.gravitee.policy.urlrewriting.URLRewritingPolicy]
+21:37:31.524 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: key-less [io.gravitee.policy.keyless.KeylessPolicy]
+21:37:31.531 [graviteeio-node] [] INFO  i.g.p.p.i.PolicyConfigurationClassFinder - No policy configuration class defined for policy io.gravitee.policy.keyless.KeylessPolicy
+21:37:31.532 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-assign-attributes [io.gravitee.policy.assignattributes.AssignAttributesPolicy]
+21:37:31.539 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: quota [io.gravitee.policy.quota.QuotaPolicy]
+21:37:31.547 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: ip-filtering [io.gravitee.policy.ipfiltering.IPFilteringPolicy]
+21:37:31.556 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-validation [io.gravitee.policy.jsonvalidation.JsonValidationPolicy]
+21:37:31.574 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-xml [io.gravitee.policy.json2xml.JsonToXmlTransformationPolicy]
+21:37:31.588 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: transform-headers [io.gravitee.policy.transformheaders.TransformHeadersPolicy]
+21:37:31.594 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xslt [io.gravitee.policy.xslt.XSLTTransformationPolicy]
+21:37:31.605 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: request-content-limit [io.gravitee.policy.rcl.RequestContentLimitPolicy]
+21:37:31.610 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: oauth2 [io.gravitee.policy.oauth2.Oauth2Policy]
+21:37:31.617 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-http-callout [io.gravitee.policy.callout.CalloutHttpPolicy]
+21:37:31.625 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing service plugins...
+21:37:31.625 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: service-endpoint-discovery [io.gravitee.gateway.services.endpoint.discovery.EndpointDiscoveryService]
+21:37:31.655 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: ratelimitasync [io.gravitee.gateway.services.ratelimit.AsyncRateLimitService]
+21:37:31.720 [graviteeio-node] [] INFO  i.g.g.s.r.s.RateLimitProxyConfiguration - Loading EHCache configuration from /opt/graviteeio-gateway/config/ehcache.xml
+21:37:32.054 [graviteeio-node] [] INFO  i.g.g.s.r.s.RateLimitProxyConfiguration - EHCache cache for ratelimit not found. Fallback to default EHCache configuration
+21:37:32.088 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: localregistry [io.gravitee.gateway.services.localregistry.LocalApiDefinitionRegistry]
+21:37:32.115 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: sync [io.gravitee.gateway.services.sync.SyncService]
+21:37:32.279 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: node-healthcheck [io.gravitee.node.service.healthcheck.NodeHealthcheckService]
+21:37:32.321 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: service-bridge-http-server [io.gravitee.repository.bridge.server.BridgeService]
+21:37:32.380 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: heartbeat [io.gravitee.gateway.services.heartbeat.HeartbeatService]
+21:37:32.444 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: healthcheck [io.gravitee.gateway.services.healthcheck.EndpointHealthcheckService]
+21:37:32.475 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: node-monitoring [io.gravitee.node.service.monitoring.MonitoringService]
+21:37:32.515 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing resource plugins...
+21:37:32.515 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: oauth2-am-resource [io.gravitee.resource.oauth2.am.OAuth2AMResource]
+21:37:32.528 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: oauth2 [io.gravitee.resource.oauth2.generic.OAuth2GenericResource]
+21:37:32.535 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: cache [io.gravitee.resource.cache.CacheResource]
+21:37:32.556 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing cockpit plugins...
+21:37:32.557 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing reporter plugins...
+21:37:32.557 [graviteeio-node] [] INFO  i.g.n.r.plugin.ReporterPluginHandler - Install plugin: elastic [io.gravitee.reporter.elasticsearch.ElasticsearchReporter]
+21:37:33.199 [graviteeio-node] [] INFO  i.g.n.r.plugin.ReporterPluginHandler - Installation skipped for: file [io.gravitee.reporter.file.FileReporter]
+21:37:33.199 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Plugins have been loaded and installed.
+21:37:33.199 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ServiceManager
+21:37:33.200 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Plugins - Services Manager
+21:37:33.200 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Endpoints Discovery
+21:37:33.209 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Asynchronous Rate Limit proxy
+21:37:33.209 [vert.x-eventloop-thread-3] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener EndpointDiscoveryVerticle for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:37:33.216 [graviteeio-node] [] INFO  i.g.g.s.r.AsyncRateLimitService - Register the rate-limit service bridge for synchronous and asynchronous mode
+21:37:33.218 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway Sync Service
+21:37:33.218 [graviteeio-node] [] INFO  i.g.g.services.sync.SyncService - Sync service has been initialized with cron [*/5 * * * * *]
+21:37:33.218 [graviteeio-node] [] INFO  i.g.g.services.sync.SyncService - Associate a new HTTP handler on /sync
+21:37:33.238 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service API keys cache repository
+21:37:33.238 [graviteeio-node] [] INFO  i.g.g.s.s.a.ApiKeysCacheService - Overriding API key repository implementation with cached API Key repository
+21:37:33.247 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener ApiKeysCacheService for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:37:33.251 [graviteeio-node] [] INFO  i.g.g.s.s.a.ApiKeysCacheService - Associate a new HTTP handler on /apikeys
+21:37:33.255 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Subscriptions cache repository
+21:37:33.256 [graviteeio-node] [] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Overriding subscription repository implementation with a cached subscription repository
+21:37:33.259 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener SubscriptionsCacheService for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:37:33.263 [graviteeio-node] [] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Associate a new HTTP handler on /subscriptions
+21:37:33.758 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Node Health-check service
+21:37:33.759 [graviteeio-node] [] INFO  i.g.n.s.healthcheck.ProbesLoader - Loading instances for type io.gravitee.node.api.healthcheck.Probe
+21:37:33.779 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /health [io.gravitee.node.service.healthcheck.management.HealthcheckManagementEndpoint]
+21:37:33.787 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway - Repository Bridge HTTP Server
+21:37:33.787 [graviteeio-node] [] INFO  i.g.r.bridge.server.BridgeService - Start HTTP server for bridge
+21:37:33.847 [vert.x-eventloop-thread-5] [] INFO  i.g.r.bridge.server.BridgeService - HTTP server for bridge listening on port 18092
+21:37:33.858 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway Heartbeat
+21:37:33.858 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Start gateway heartbeat
+21:37:33.957 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Monitoring scheduled with fixed delay 5000 MILLISECONDS 
+21:37:33.957 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Start gateway heartbeat : DONE
+21:37:33.957 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Health-check service
+21:37:33.963 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Monitoring Service
+21:37:33.963 [vert.x-eventloop-thread-8] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener EndpointHealthcheckVerticle for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:37:33.968 [graviteeio-node] [] INFO  i.g.n.s.monitoring.MonitoringService - Node monitoring scheduled with fixed delay 5000 MILLISECONDS 
+21:37:33.971 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /monitor [io.gravitee.node.service.monitoring.management.MonitorManagementEndpoint]
+21:37:33.972 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ManagementService
+21:37:33.972 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Node Management API service
+21:37:33.979 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ReporterManager
+21:37:33.979 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.v.ManagementVerticle - Start HTTP listener for Node Management API
+21:37:33.979 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Reporter service
+21:37:33.981 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: AlertEventProducerManager
+21:37:33.981 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Alert Engine - Event producer
+21:37:33.982 [graviteeio-node] [] INFO  i.g.p.a.i.AlertEventProducerManagerImpl - 	There is no event producer to start
+21:37:33.983 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - Gravitee.io - API Gateway id[49dd2dab-dd03-4ea5-9d2d-abdd03cea592] version[3.6.0] pid[1] build[38#d9cc177dc0487b8ba202bea9f11e6bf93839657a] jvm[AdoptOpenJDK/OpenJDK 64-Bit Server VM/11.0.10+9] started in 12293 ms.
+21:37:33.995 [vert.x-eventloop-thread-11] [] INFO  i.g.n.r.vertx.ReporterManagerImpl - Starting reporter: io.gravitee.node.reporter.vertx.eventbus.EventBusReporterWrapper@6d1d52b
+21:37:34.007 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET / [io.gravitee.node.management.http.node.NodeEndpoint]
+21:37:34.007 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /configuration [io.gravitee.node.management.http.configuration.ConfigurationEndpoint]
+21:37:34.007 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.v.ManagementVerticle - HTTP listener for Node Management bind to port TCP:18082
+21:37:34.012 [vert.x-worker-thread-0] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.reporter.elasticsearch.ElasticsearchReporter
+21:37:34.012 [vert.x-worker-thread-0] [] INFO  i.g.r.e.ElasticsearchReporter - Starting Elastic reporter engine...
+21:37:34.249 [vert.x-eventloop-thread-11] [] ERROR i.g.e.client.http.HttpClient - Unable to get a connection to Elasticsearch: Connection refused: elasticsearch/172.22.0.3:9200
+21:37:34.263 [vert.x-eventloop-thread-11] [] ERROR i.g.e.client.http.HttpClient - Unable to get a connection to Elasticsearch: Connection refused: elasticsearch/172.22.0.3:9200
+21:37:35.207 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:37:35.207 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]:
+21:37:35.207 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- goplan
+21:37:35.245 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:37:35.245 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.ReactorHandlerFactoryManager - Loading instances for type io.gravitee.gateway.reactor.handler.ReactorHandlerFactory
+21:37:35.339 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:37:35.348 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1] requires the following authentication handlers:
+21:37:35.349 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:37:35.369 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:37:35.399 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18000] primary[true]
+21:37:35.400 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:37:35.429 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:37:35.429 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:37:35.442 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1] ready to accept requests on:
+21:37:35.444 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/goapi//*]
+21:37:35.444 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 75 ms
+21:37:35.444 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:37:35.452 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[goapi] id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa]
+21:37:35.455 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[goapi] name[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa]
+21:37:35.476 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:37:35.476 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]:
+21:37:35.476 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- flaskapi
+21:37:35.480 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:37:35.498 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:37:35.499 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1] requires the following authentication handlers:
+21:37:35.499 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:37:35.503 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:37:35.509 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18002] primary[true]
+21:37:35.509 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:37:35.510 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:37:35.510 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:37:35.510 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1] ready to accept requests on:
+21:37:35.511 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/flaskapi//*]
+21:37:35.511 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 8 ms
+21:37:35.511 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:37:35.511 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[flaskapi] id[37b50b65-be0c-4254-b50b-65be0c725432]
+21:37:35.512 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[flaskapi] name[37b50b65-be0c-4254-b50b-65be0c725432]
+21:37:35.520 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:37:35.520 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]:
+21:37:35.520 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- node
+21:37:35.524 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:37:35.541 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:37:35.541 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1] requires the following authentication handlers:
+21:37:35.541 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:37:35.545 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:37:35.550 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18001] primary[true]
+21:37:35.550 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:37:35.551 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1] ready to accept requests on:
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/nodeapi//*]
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 7 ms
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[nodeapi] id[4044333a-ddef-4f39-8433-3addefaf3970]
+21:37:35.552 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[nodeapi] name[4044333a-ddef-4f39-8433-3addefaf3970]
+21:37:35.560 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:37:35.560 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]:
+21:37:35.560 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- springapi
+21:37:35.564 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:37:35.579 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:37:35.580 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1] requires the following authentication handlers:
+21:37:35.581 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:37:35.584 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:37:35.591 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18003] primary[true]
+21:37:35.591 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1] ready to accept requests on:
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/springapi//*]
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 8 ms
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:37:35.592 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[springapi] id[ccbdb36c-748d-4250-bdb3-6c748d625027]
+21:37:35.593 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[springapi] name[ccbdb36c-748d-4250-bdb3-6c748d625027]
+21:37:39.758 [vert.x-eventloop-thread-15] [] INFO  i.g.r.e.ElasticsearchReporter - Starting Elastic reporter engine... DONE
+21:37:39.758 [vert.x-eventloop-thread-15] [] INFO  i.g.r.e.ElasticsearchReporter - Index mapping template successfully defined
+21:41:37.702 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - Loading Gravitee configuration.
+21:41:37.719 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - 	Gravitee configuration loaded from /opt/graviteeio-gateway/config/gravitee.yml
+21:41:37.905 [graviteeio-node] [] INFO  i.g.n.c.s.e.PropertiesConfiguration - Loading Gravitee configuration. DONE
+21:41:37.924 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - Loading plugin handlers
+21:41:37.940 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - Find 7 plugin handler(s):
+21:41:37.942 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.discovery.internal.ServiceDiscoveryPluginHandler
+21:41:37.944 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.policy.internal.PolicyPluginHandler
+21:41:37.946 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.node.plugins.service.handler.ServicePluginHandler
+21:41:37.948 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.gateway.repository.plugins.RepositoryPluginHandler
+21:41:37.949 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.node.reporter.plugin.ReporterPluginHandler
+21:41:37.951 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.alert.internal.AlertPluginHandler
+21:41:37.952 [graviteeio-node] [] INFO  i.g.p.c.s.PluginHandlerBeanFactoryPostProcessor - 	io.gravitee.plugin.resource.internal.ResourcePluginHandler
+21:41:38.195 [graviteeio-node] [] INFO  i.g.n.c.NodeDeployerFactoriesLoader - Loading instances for type io.gravitee.node.api.NodeDeployer
+21:41:38.254 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope MANAGEMENT: mongodb
+21:41:38.255 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope RATE_LIMIT: mongodb
+21:41:38.259 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Loading repository for scope CACHE: ehcache
+21:41:39.410 [graviteeio-node] [] WARN  c.h.i.HazelcastInstanceFactory - Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+21:41:43.184 [graviteeio-node] [] WARN  com.hazelcast.instance.Node - [172.22.0.5]:5701 [dev] [3.12.9] No join method is enabled! Starting standalone.
+21:41:43.900 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /apis [io.gravitee.gateway.handlers.api.manager.endpoint.ApisManagementEndpoint]
+21:41:43.926 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /apis/:apiId [io.gravitee.gateway.handlers.api.manager.endpoint.ApiManagementEndpoint]
+21:41:45.008 [graviteeio-node] [] INFO  i.g.node.container.AbstractContainer - Starting Gravitee.io - API Gateway...
+21:41:45.008 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - Gravitee.io - API Gateway is now starting...
+21:41:45.009 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: Reactor
+21:41:45.009 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.gateway.reactor.impl.DefaultReactor
+21:41:45.010 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener DefaultReactor for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:41:45.014 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: VertxEmbeddedContainer
+21:41:45.016 [graviteeio-node] [] INFO  i.g.g.s.vertx.VertxEmbeddedContainer - Starting Vertx container and deploy Gateway Verticles [16 instance(s)]
+21:41:45.288 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ClusterService
+21:41:45.289 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: PluginEventListener
+21:41:45.295 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.plugin.core.internal.PluginEventListener
+21:41:45.333 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener PluginEventListener for event type class io.gravitee.plugin.core.api.PluginEvent
+21:41:45.334 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: PluginRegistry
+21:41:45.336 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.plugin.core.internal.PluginRegistryImpl
+21:41:45.336 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Initializing plugin registry.
+21:41:45.336 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugins from /opt/graviteeio-gateway/plugins
+21:41:45.401 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-http-signature-1.0.0.zip
+21:41:45.802 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-http-signature-1.0.0/gravitee-policy-http-signature-1.0.0.jar
+21:41:45.841 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-quota-1.11.0.zip
+21:41:45.872 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-quota-1.11.0/gravitee-policy-quota-1.11.0.jar
+21:41:45.874 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-gateway-bridge-http-server-3.6.0.zip
+21:41:45.929 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-gateway-bridge-http-server-3.6.0/gravitee-repository-gateway-bridge-http-server-3.6.0.jar
+21:41:45.956 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-oauth2-provider-generic-1.15.0.zip
+21:41:46.032 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-oauth2-provider-generic-1.15.0/gravitee-resource-oauth2-provider-generic-1.15.0.jar
+21:41:46.042 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-heartbeat-3.6.0.zip
+21:41:46.074 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-heartbeat-3.6.0/gravitee-gateway-services-heartbeat-3.6.0.jar
+21:41:46.084 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-node-services-healthcheck-1.10.0.zip
+21:41:46.120 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-node-services-healthcheck-1.10.0/gravitee-node-services-healthcheck-1.10.0.jar
+21:41:46.122 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-spikearrest-1.11.0.zip
+21:41:46.174 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-spikearrest-1.11.0/gravitee-policy-spikearrest-1.11.0.jar
+21:41:46.178 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-role-based-access-control-1.1.0.zip
+21:41:46.197 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-role-based-access-control-1.1.0/gravitee-policy-role-based-access-control-1.1.0.jar
+21:41:46.199 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-mongodb-3.6.0.zip
+21:41:46.368 [vert.x-eventloop-thread-0] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.369 [vert.x-eventloop-thread-6] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.369 [vert.x-eventloop-thread-10] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.369 [vert.x-eventloop-thread-13] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.370 [vert.x-eventloop-thread-8] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-12] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-14] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-9] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-7] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-1] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.371 [vert.x-eventloop-thread-15] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.372 [vert.x-eventloop-thread-5] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.372 [vert.x-eventloop-thread-3] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.374 [vert.x-eventloop-thread-11] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.375 [vert.x-eventloop-thread-4] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.375 [vert.x-eventloop-thread-2] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP listener ready to accept requests on port 8082
+21:41:46.665 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-mongodb-3.6.0/gravitee-repository-mongodb-3.6.0.jar
+21:41:46.671 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-transformqueryparams-1.6.0.zip
+21:41:46.682 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-transformqueryparams-1.6.0/gravitee-policy-transformqueryparams-1.6.0.jar
+21:41:46.688 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-rest-to-soap-1.11.0.zip
+21:41:46.703 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-rest-to-soap-1.11.0/gravitee-policy-rest-to-soap-1.11.0.jar
+21:41:46.710 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-validation-1.1.0.zip
+21:41:46.774 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-validation-1.1.0/gravitee-policy-xml-validation-1.1.0.jar
+21:41:46.779 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-service-discovery-consul-1.2.0.zip
+21:41:46.864 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-service-discovery-consul-1.2.0/gravitee-service-discovery-consul-1.2.0.jar
+21:41:46.870 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-endpoint-discovery-3.6.0.zip
+21:41:46.888 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-endpoint-discovery-3.6.0/gravitee-gateway-services-endpoint-discovery-3.6.0.jar
+21:41:46.890 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-healthcheck-3.6.0.zip
+21:41:46.910 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-healthcheck-3.6.0/gravitee-gateway-services-healthcheck-3.6.0.jar
+21:41:46.912 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ipfiltering-1.7.0.zip
+21:41:47.063 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ipfiltering-1.7.0/gravitee-policy-ipfiltering-1.7.0.jar
+21:41:47.064 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-html-json-1.6.0.zip
+21:41:47.099 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-html-json-1.6.0/gravitee-policy-html-json-1.6.0.jar
+21:41:47.100 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-callout-http-1.12.0.zip
+21:41:47.141 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-callout-http-1.12.0/gravitee-policy-callout-http-1.12.0.jar
+21:41:47.143 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-regex-threat-protection-1.2.0.zip
+21:41:47.189 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-regex-threat-protection-1.2.0/gravitee-policy-regex-threat-protection-1.2.0.jar
+21:41:47.196 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-latency-1.3.0.zip
+21:41:47.269 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-latency-1.3.0/gravitee-policy-latency-1.3.0.jar
+21:41:47.273 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-dynamic-routing-1.11.0.zip
+21:41:47.288 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-dynamic-routing-1.11.0/gravitee-policy-dynamic-routing-1.11.0.jar
+21:41:47.292 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-groovy-1.12.1.zip
+21:41:47.444 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-groovy-1.12.1/gravitee-policy-groovy-1.12.1.jar
+21:41:47.453 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-to-json-1.6.0.zip
+21:41:47.501 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-to-json-1.6.0/gravitee-policy-json-to-json-1.6.0.jar
+21:41:47.502 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-resource-filtering-1.8.0.zip
+21:41:47.515 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-resource-filtering-1.8.0/gravitee-policy-resource-filtering-1.8.0.jar
+21:41:47.516 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-override-http-method-1.3.0.zip
+21:41:47.549 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-override-http-method-1.3.0/gravitee-policy-override-http-method-1.3.0.jar
+21:41:47.551 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-xml-1.0.0.zip
+21:41:47.570 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-xml-1.0.0/gravitee-policy-json-xml-1.0.0.jar
+21:41:47.571 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-jws-1.3.0.zip
+21:41:47.596 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-jws-1.3.0/gravitee-policy-jws-1.3.0.jar
+21:41:47.597 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-transformheaders-1.8.0.zip
+21:41:47.608 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-transformheaders-1.8.0/gravitee-policy-transformheaders-1.8.0.jar
+21:41:47.610 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-reporter-elasticsearch-3.6.0.zip
+21:41:47.696 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-reporter-elasticsearch-3.6.0/gravitee-reporter-elasticsearch-3.6.0.jar
+21:41:47.698 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-apikey-2.2.0.zip
+21:41:47.705 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-apikey-2.2.0/gravitee-policy-apikey-2.2.0.jar
+21:41:47.706 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ratelimit-1.11.0.zip
+21:41:47.716 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ratelimit-1.11.0/gravitee-policy-ratelimit-1.11.0.jar
+21:41:47.717 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-ssl-enforcement-1.2.0.zip
+21:41:47.730 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-ssl-enforcement-1.2.0/gravitee-policy-ssl-enforcement-1.2.0.jar
+21:41:47.731 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-json-1.7.0.zip
+21:41:47.749 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-json-1.7.0/gravitee-policy-xml-json-1.7.0.jar
+21:41:47.750 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-cockpit-connectors-ws-1.0.0.zip
+21:41:47.780 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-cockpit-connectors-ws-1.0.0/gravitee-cockpit-connectors-ws-1.0.0.jar
+21:41:47.781 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-threat-protection-1.2.0.zip
+21:41:47.791 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-threat-protection-1.2.0/gravitee-policy-json-threat-protection-1.2.0.jar
+21:41:47.792 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-request-content-limit-1.7.0.zip
+21:41:47.798 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-request-content-limit-1.7.0/gravitee-policy-request-content-limit-1.7.0.jar
+21:41:47.799 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-localregistry-3.6.0.zip
+21:41:47.802 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-localregistry-3.6.0/gravitee-gateway-services-localregistry-3.6.0.jar
+21:41:47.802 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-node-services-monitoring-1.10.0.zip
+21:41:47.806 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-node-services-monitoring-1.10.0/gravitee-node-services-monitoring-1.10.0.jar
+21:41:47.807 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xslt-1.6.0.zip
+21:41:47.918 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xslt-1.6.0/gravitee-policy-xslt-1.6.0.jar
+21:41:47.919 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-openid-connect-userinfo-1.4.0.zip
+21:41:47.933 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-openid-connect-userinfo-1.4.0/gravitee-policy-openid-connect-userinfo-1.4.0.jar
+21:41:47.934 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-generate-jwt-1.5.0.zip
+21:41:47.943 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-generate-jwt-1.5.0/gravitee-policy-generate-jwt-1.5.0.jar
+21:41:47.944 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-jwt-1.17.0.zip
+21:41:47.993 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-jwt-1.17.0/gravitee-policy-jwt-1.17.0.jar
+21:41:47.998 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-xml-threat-protection-1.2.0.zip
+21:41:48.125 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-xml-threat-protection-1.2.0/gravitee-policy-xml-threat-protection-1.2.0.jar
+21:41:48.129 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-gateway-bridge-http-client-3.6.0.zip
+21:41:48.155 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-gateway-bridge-http-client-3.6.0/gravitee-repository-gateway-bridge-http-client-3.6.0.jar
+21:41:48.155 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-json-validation-1.6.0.zip
+21:41:48.251 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-json-validation-1.6.0/gravitee-policy-json-validation-1.6.0.jar
+21:41:48.252 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-url-rewriting-1.4.0.zip
+21:41:48.270 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-url-rewriting-1.4.0/gravitee-policy-url-rewriting-1.4.0.jar
+21:41:48.273 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-sync-3.6.0.zip
+21:41:48.291 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-sync-3.6.0/gravitee-gateway-services-sync-3.6.0.jar
+21:41:48.293 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-assign-content-1.6.0.zip
+21:41:48.332 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-assign-content-1.6.0/gravitee-policy-assign-content-1.6.0.jar
+21:41:48.333 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-cache-1.9.0.zip
+21:41:48.347 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-cache-1.9.0/gravitee-policy-cache-1.9.0.jar
+21:41:48.348 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-oauth2-provider-am-1.13.0.zip
+21:41:48.361 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-oauth2-provider-am-1.13.0/gravitee-resource-oauth2-provider-am-1.13.0.jar
+21:41:48.363 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-assign-attributes-1.5.0.zip
+21:41:48.374 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-assign-attributes-1.5.0/gravitee-policy-assign-attributes-1.5.0.jar
+21:41:48.375 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-retry-1.1.0.zip
+21:41:48.387 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-retry-1.1.0/gravitee-policy-retry-1.1.0.jar
+21:41:48.388 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-keyless-1.3.0.zip
+21:41:48.396 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-keyless-1.3.0/gravitee-policy-keyless-1.3.0.jar
+21:41:48.397 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-request-validation-1.11.0.zip
+21:41:48.403 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-request-validation-1.11.0/gravitee-policy-request-validation-1.11.0.jar
+21:41:48.404 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-reporter-file-2.1.0.zip
+21:41:48.530 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-reporter-file-2.1.0/gravitee-reporter-file-2.1.0.jar
+21:41:48.531 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-oauth2-1.15.0.zip
+21:41:48.550 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-oauth2-1.15.0/gravitee-policy-oauth2-1.15.0.jar
+21:41:48.551 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-gateway-services-ratelimit-1.11.0.zip
+21:41:48.774 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-gateway-services-ratelimit-1.11.0/gravitee-gateway-services-ratelimit-1.11.0.jar
+21:41:48.777 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-policy-mock-1.12.0.zip
+21:41:48.784 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-policy-mock-1.12.0/gravitee-policy-mock-1.12.0.jar
+21:41:48.785 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-repository-jdbc-3.6.0.zip
+21:41:48.880 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-repository-jdbc-3.6.0/gravitee-repository-jdbc-3.6.0.jar
+21:41:48.882 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Loading plugin from /opt/graviteeio-gateway/plugins/gravitee-resource-cache-1.4.0.zip
+21:41:49.041 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - A plugin manifest has been loaded from: /opt/graviteeio-gateway/plugins/.work/gravitee-resource-cache-1.4.0/gravitee-resource-cache-1.4.0.jar
+21:41:49.049 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available policy: 
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> http-signature [1.0.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> quota [1.11.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> spike-arrest [1.11.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rbac [1.1.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> transform-queryparams [1.6.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rest-to-soap [1.11.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-validation [1.1.0] has been loaded
+21:41:49.054 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ip-filtering [1.7.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> html-json [1.6.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-http-callout [1.12.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> regex-threat-protection [1.2.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> latency [1.3.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> dynamic-routing [1.11.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> groovy [1.12.1] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-to-json [1.6.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> resource-filtering [1.8.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-override-request-method [1.3.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-xml [1.0.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> jws [1.3.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> transform-headers [1.8.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> api-key [2.2.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> rate-limit [1.11.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ssl-enforcement [1.2.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-json [1.7.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-threat-protection [1.2.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> request-content-limit [1.7.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xslt [1.6.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-openid-userinfo [1.4.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-generate-jwt [1.5.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> jwt [1.17.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> xml-threat-protection [1.2.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> json-validation [1.6.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> url-rewriting [1.4.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-assign-content [1.6.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cache [1.9.0] has been loaded
+21:41:49.055 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-assign-attributes [1.5.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> retry [1.1.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> key-less [1.3.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> policy-request-validation [1.11.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2 [1.15.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> mock [1.12.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available service: 
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> service-bridge-http-server [3.6.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> heartbeat [3.6.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> node-healthcheck [1.10.0] has been loaded
+21:41:49.056 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> service-endpoint-discovery [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> healthcheck [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> localregistry [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> node-monitoring [1.10.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> sync [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> ratelimitasync [1.11.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available resource: 
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2 [1.15.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> oauth2-am-resource [1.13.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cache [1.4.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available repository: 
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-mongodb [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-bridge-http-client [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> repository-jdbc [3.6.0] has been loaded
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available service_discovery: 
+21:41:49.057 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> consul-service-discovery [1.2.0] has been loaded
+21:41:49.058 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available reporter: 
+21:41:49.058 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> elastic [3.6.0] has been loaded
+21:41:49.058 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> file [2.1.0] has been loaded
+21:41:49.058 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - List of available cockpit: 
+21:41:49.058 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - 	> cockpit-connectors-ws [1.0.0] has been loaded
+21:41:49.059 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - All plugins have been loaded. Installing...
+21:41:49.066 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing repository plugins...
+21:41:49.078 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-bridge-http-client [io.gravitee.repository.bridge.client.HttpBridgeRepository]
+21:41:49.080 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-mongodb [io.gravitee.repository.mongodb.MongoRepository]
+21:41:49.081 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Repository [MANAGEMENT] loaded by mongodb
+21:41:53.943 [graviteeio-node] [] WARN  c.g.d.core.el.ELExpressionFactory - javax.el is not supported; Failed to resolve ExpressionFactory, com.sun.el.ExpressionFactoryImpl
+21:41:56.002 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Repository [RATE_LIMIT] loaded by mongodb
+21:41:56.287 [graviteeio-node] [] INFO  i.g.g.r.p.RepositoryPluginHandler - Register a new repository plugin: repository-jdbc [io.gravitee.repository.jdbc.JdbcRepository]
+21:41:56.287 [graviteeio-node] [] WARN  i.g.g.r.p.RepositoryPluginHandler - Repository scope MANAGEMENT already loaded by io.gravitee.repository.mongodb.MongoRepository@6c418f0b
+21:41:56.287 [graviteeio-node] [] WARN  i.g.g.r.p.RepositoryPluginHandler - Repository scope RATE_LIMIT already loaded by io.gravitee.repository.mongodb.MongoRepository@6c418f0b
+21:41:56.288 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing service_discovery plugins...
+21:41:56.288 [graviteeio-node] [] INFO  i.g.p.d.i.ServiceDiscoveryPluginHandler - Install plugin: consul-service-discovery [io.gravitee.discovery.consul.ConsulServiceDiscovery]
+21:41:56.480 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing policy plugins...
+21:41:56.480 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-openid-userinfo [io.gravitee.policy.openid.userinfo.UserInfoPolicy]
+21:41:56.486 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: groovy [io.gravitee.policy.groovy.GroovyPolicy]
+21:41:56.503 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: cache [io.gravitee.policy.cache.CachePolicy]
+21:41:56.537 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rest-to-soap [io.gravitee.policy.rest2soap.RestToSoapTransformerPolicy]
+21:41:56.551 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-validation [io.gravitee.policy.xmlvalidation.XmlValidationPolicy]
+21:41:56.557 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-threat-protection [io.gravitee.policy.threatprotection.json.JsonThreatProtectionPolicy]
+21:41:56.563 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: latency [io.gravitee.policy.latency.LatencyPolicy]
+21:41:56.578 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: regex-threat-protection [io.gravitee.policy.threatprotection.regex.RegexThreatProtectionPolicy]
+21:41:56.587 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-threat-protection [io.gravitee.policy.threatprotection.xml.XmlThreatProtectionPolicy]
+21:41:56.592 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: retry [io.gravitee.policy.retry.RetryPolicy]
+21:41:56.600 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: jws [io.gravitee.policy.jws.JWSPolicy]
+21:41:56.606 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: html-json [io.gravitee.policy.html2Json.HTMLToJSONTransformationPolicy]
+21:41:56.610 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: transform-queryparams [io.gravitee.policy.transformqueryparams.TransformQueryParametersPolicy]
+21:41:56.621 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: dynamic-routing [io.gravitee.policy.dynamicrouting.DynamicRoutingPolicy]
+21:41:56.626 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rbac [io.gravitee.policy.rbac.RoleBasedAccessControlPolicy]
+21:41:56.633 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: resource-filtering [io.gravitee.policy.resourcefiltering.ResourceFilteringPolicy]
+21:41:56.659 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-override-request-method [io.gravitee.policy.overriderequestmethod.OverrideRequestMethodPolicy]
+21:41:56.662 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-request-validation [io.gravitee.policy.requestvalidation.RequestValidationPolicy]
+21:41:56.672 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: mock [io.gravitee.policy.mock.MockPolicy]
+21:41:56.688 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xml-json [io.gravitee.policy.xml2json.XmlToJsonTransformationPolicy]
+21:41:56.704 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: http-signature [io.gravitee.policy.httpsignature.HttpSignaturePolicy]
+21:41:56.708 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-to-json [io.gravitee.policy.json2json.JsonToJsonTransformationPolicy]
+21:41:56.712 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: ssl-enforcement [io.gravitee.policy.sslenforcement.SslEnforcementPolicy]
+21:41:56.716 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: api-key [io.gravitee.policy.apikey.ApiKeyPolicy]
+21:41:56.725 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: rate-limit [io.gravitee.policy.ratelimit.RateLimitPolicy]
+21:41:56.730 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: jwt [io.gravitee.policy.jwt.JWTPolicy]
+21:41:56.748 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-generate-jwt [io.gravitee.policy.generatejwt.GenerateJwtPolicy]
+21:41:56.760 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-assign-content [io.gravitee.policy.assigncontent.AssignContentPolicy]
+21:41:56.769 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: spike-arrest [io.gravitee.policy.spike.SpikeArrestPolicy]
+21:41:56.791 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: url-rewriting [io.gravitee.policy.urlrewriting.URLRewritingPolicy]
+21:41:56.800 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: key-less [io.gravitee.policy.keyless.KeylessPolicy]
+21:41:56.801 [graviteeio-node] [] INFO  i.g.p.p.i.PolicyConfigurationClassFinder - No policy configuration class defined for policy io.gravitee.policy.keyless.KeylessPolicy
+21:41:56.802 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-assign-attributes [io.gravitee.policy.assignattributes.AssignAttributesPolicy]
+21:41:56.806 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: quota [io.gravitee.policy.quota.QuotaPolicy]
+21:41:56.810 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: ip-filtering [io.gravitee.policy.ipfiltering.IPFilteringPolicy]
+21:41:56.827 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-validation [io.gravitee.policy.jsonvalidation.JsonValidationPolicy]
+21:41:56.839 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: json-xml [io.gravitee.policy.json2xml.JsonToXmlTransformationPolicy]
+21:41:56.849 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: transform-headers [io.gravitee.policy.transformheaders.TransformHeadersPolicy]
+21:41:56.853 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: xslt [io.gravitee.policy.xslt.XSLTTransformationPolicy]
+21:41:56.861 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: request-content-limit [io.gravitee.policy.rcl.RequestContentLimitPolicy]
+21:41:56.864 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: oauth2 [io.gravitee.policy.oauth2.Oauth2Policy]
+21:41:56.868 [graviteeio-node] [] INFO  i.g.p.p.internal.PolicyPluginHandler - Install plugin: policy-http-callout [io.gravitee.policy.callout.CalloutHttpPolicy]
+21:41:56.874 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing service plugins...
+21:41:56.874 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: service-endpoint-discovery [io.gravitee.gateway.services.endpoint.discovery.EndpointDiscoveryService]
+21:41:56.897 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: ratelimitasync [io.gravitee.gateway.services.ratelimit.AsyncRateLimitService]
+21:41:56.940 [graviteeio-node] [] INFO  i.g.g.s.r.s.RateLimitProxyConfiguration - Loading EHCache configuration from /opt/graviteeio-gateway/config/ehcache.xml
+21:41:57.183 [graviteeio-node] [] INFO  i.g.g.s.r.s.RateLimitProxyConfiguration - EHCache cache for ratelimit not found. Fallback to default EHCache configuration
+21:41:57.194 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: localregistry [io.gravitee.gateway.services.localregistry.LocalApiDefinitionRegistry]
+21:41:57.200 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: sync [io.gravitee.gateway.services.sync.SyncService]
+21:41:57.282 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: node-healthcheck [io.gravitee.node.service.healthcheck.NodeHealthcheckService]
+21:41:57.299 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: service-bridge-http-server [io.gravitee.repository.bridge.server.BridgeService]
+21:41:57.324 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: heartbeat [io.gravitee.gateway.services.heartbeat.HeartbeatService]
+21:41:57.368 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: healthcheck [io.gravitee.gateway.services.healthcheck.EndpointHealthcheckService]
+21:41:57.393 [graviteeio-node] [] INFO  i.g.n.p.s.h.ServicePluginHandler - Install plugin: node-monitoring [io.gravitee.node.service.monitoring.MonitoringService]
+21:41:57.412 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing resource plugins...
+21:41:57.412 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: oauth2-am-resource [io.gravitee.resource.oauth2.am.OAuth2AMResource]
+21:41:57.417 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: oauth2 [io.gravitee.resource.oauth2.generic.OAuth2GenericResource]
+21:41:57.421 [graviteeio-node] [] INFO  i.g.p.r.i.ResourcePluginHandler - Install plugin: cache [io.gravitee.resource.cache.CacheResource]
+21:41:57.426 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing cockpit plugins...
+21:41:57.426 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginEventListener - Installing reporter plugins...
+21:41:57.427 [graviteeio-node] [] INFO  i.g.n.r.plugin.ReporterPluginHandler - Install plugin: elastic [io.gravitee.reporter.elasticsearch.ElasticsearchReporter]
+21:41:57.655 [graviteeio-node] [] INFO  i.g.n.r.plugin.ReporterPluginHandler - Installation skipped for: file [io.gravitee.reporter.file.FileReporter]
+21:41:57.655 [graviteeio-node] [] INFO  i.g.p.c.internal.PluginRegistryImpl - Plugins have been loaded and installed.
+21:41:57.655 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ServiceManager
+21:41:57.655 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Plugins - Services Manager
+21:41:57.655 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Endpoints Discovery
+21:41:57.659 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Asynchronous Rate Limit proxy
+21:41:57.659 [vert.x-eventloop-thread-3] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener EndpointDiscoveryVerticle for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:41:57.663 [graviteeio-node] [] INFO  i.g.g.s.r.AsyncRateLimitService - Register the rate-limit service bridge for synchronous and asynchronous mode
+21:41:57.664 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway Sync Service
+21:41:57.664 [graviteeio-node] [] INFO  i.g.g.services.sync.SyncService - Sync service has been initialized with cron [*/5 * * * * *]
+21:41:57.664 [graviteeio-node] [] INFO  i.g.g.services.sync.SyncService - Associate a new HTTP handler on /sync
+21:41:57.670 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service API keys cache repository
+21:41:57.670 [graviteeio-node] [] INFO  i.g.g.s.s.a.ApiKeysCacheService - Overriding API key repository implementation with cached API Key repository
+21:41:57.671 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener ApiKeysCacheService for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:41:57.672 [graviteeio-node] [] INFO  i.g.g.s.s.a.ApiKeysCacheService - Associate a new HTTP handler on /apikeys
+21:41:57.673 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Subscriptions cache repository
+21:41:57.673 [graviteeio-node] [] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Overriding subscription repository implementation with a cached subscription repository
+21:41:57.674 [graviteeio-node] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener SubscriptionsCacheService for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:41:57.675 [graviteeio-node] [] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Associate a new HTTP handler on /subscriptions
+21:41:57.804 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Node Health-check service
+21:41:57.804 [graviteeio-node] [] INFO  i.g.n.s.healthcheck.ProbesLoader - Loading instances for type io.gravitee.node.api.healthcheck.Probe
+21:41:57.810 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /health [io.gravitee.node.service.healthcheck.management.HealthcheckManagementEndpoint]
+21:41:57.811 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway - Repository Bridge HTTP Server
+21:41:57.811 [graviteeio-node] [] INFO  i.g.r.bridge.server.BridgeService - Start HTTP server for bridge
+21:41:57.828 [vert.x-eventloop-thread-5] [] INFO  i.g.r.bridge.server.BridgeService - HTTP server for bridge listening on port 18092
+21:41:57.835 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Gateway Heartbeat
+21:41:57.835 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Start gateway heartbeat
+21:41:57.885 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Monitoring scheduled with fixed delay 5000 MILLISECONDS 
+21:41:57.885 [graviteeio-node] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Start gateway heartbeat : DONE
+21:41:57.885 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Health-check service
+21:41:57.892 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Monitoring Service
+21:41:57.892 [vert.x-eventloop-thread-8] [] INFO  i.g.c.event.impl.EventManagerImpl - Register new listener EndpointHealthcheckVerticle for event type class io.gravitee.gateway.reactor.ReactorEvent
+21:41:57.895 [graviteeio-node] [] INFO  i.g.n.s.monitoring.MonitoringService - Node monitoring scheduled with fixed delay 5000 MILLISECONDS 
+21:41:57.896 [graviteeio-node] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /monitor [io.gravitee.node.service.monitoring.management.MonitorManagementEndpoint]
+21:41:57.896 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ManagementService
+21:41:57.896 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Node Management API service
+21:41:57.898 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: ReporterManager
+21:41:57.899 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.v.ManagementVerticle - Start HTTP listener for Node Management API
+21:41:57.899 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Reporter service
+21:41:57.900 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - 	Starting component: AlertEventProducerManager
+21:41:57.900 [graviteeio-node] [] INFO  i.g.common.service.AbstractService - Initializing service Alert Engine - Event producer
+21:41:57.900 [graviteeio-node] [] INFO  i.g.p.a.i.AlertEventProducerManagerImpl - 	There is no event producer to start
+21:41:57.900 [graviteeio-node] [] INFO  i.g.g.standalone.node.GatewayNode - Gravitee.io - API Gateway id[6a13b0a6-9cf4-4596-93b0-a69cf4f596c6] version[3.6.0] pid[1] build[38#d9cc177dc0487b8ba202bea9f11e6bf93839657a] jvm[AdoptOpenJDK/OpenJDK 64-Bit Server VM/11.0.10+9] started in 12891 ms.
+21:41:57.907 [vert.x-eventloop-thread-11] [] INFO  i.g.n.r.vertx.ReporterManagerImpl - Starting reporter: io.gravitee.node.reporter.vertx.eventbus.EventBusReporterWrapper@75498aed
+21:41:57.915 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET / [io.gravitee.node.management.http.node.NodeEndpoint]
+21:41:57.915 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.e.ManagementEndpointManagerImpl - Register a new endpoint for Management API: GET /configuration [io.gravitee.node.management.http.configuration.ConfigurationEndpoint]
+21:41:57.915 [vert.x-eventloop-thread-10] [] INFO  i.g.n.m.h.v.v.ManagementVerticle - HTTP listener for Node Management bind to port TCP:18082
+21:41:57.925 [vert.x-worker-thread-0] [] INFO  i.g.common.service.AbstractService - Initializing service io.gravitee.reporter.elasticsearch.ElasticsearchReporter
+21:41:57.925 [vert.x-worker-thread-0] [] INFO  i.g.r.e.ElasticsearchReporter - Starting Elastic reporter engine...
+21:41:58.077 [vert.x-eventloop-thread-11] [] ERROR i.g.e.client.http.HttpClient - Unable to get a connection to Elasticsearch: Connection refused: elasticsearch/172.22.0.2:9200
+21:41:58.083 [vert.x-eventloop-thread-11] [] ERROR i.g.e.client.http.HttpClient - Unable to get a connection to Elasticsearch: Connection refused: elasticsearch/172.22.0.2:9200
+21:42:00.143 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:42:00.143 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]:
+21:42:00.143 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- goplan
+21:42:00.162 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:42:00.162 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.ReactorHandlerFactoryManager - Loading instances for type io.gravitee.gateway.reactor.handler.ReactorHandlerFactory
+21:42:00.218 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:42:00.223 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1] requires the following authentication handlers:
+21:42:00.224 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:42:00.233 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:42:00.246 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18000] primary[true]
+21:42:00.246 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:42:00.260 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:42:00.260 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:42:00.267 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1] ready to accept requests on:
+21:42:00.268 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/goapi//*]
+21:42:00.268 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 35 ms
+21:42:00.268 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] name[goapi] version[v1]
+21:42:00.274 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[goapi] id[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa]
+21:42:00.276 [gio.sync-1] [594a8ba9-f02a-40da-8a8b-a9f02aa0daaa] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[goapi] name[594a8ba9-f02a-40da-8a8b-a9f02aa0daaa]
+21:42:00.285 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:42:00.285 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]:
+21:42:00.285 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- flaskapi
+21:42:00.288 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:42:00.301 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:42:00.302 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1] requires the following authentication handlers:
+21:42:00.302 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:42:00.305 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:42:00.310 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18002] primary[true]
+21:42:00.310 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:42:00.311 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:42:00.311 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:42:00.311 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1] ready to accept requests on:
+21:42:00.311 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/flaskapi//*]
+21:42:00.312 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 5 ms
+21:42:00.312 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[37b50b65-be0c-4254-b50b-65be0c725432] name[flaskapi] version[v1]
+21:42:00.312 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[flaskapi] id[37b50b65-be0c-4254-b50b-65be0c725432]
+21:42:00.313 [gio.sync-1] [37b50b65-be0c-4254-b50b-65be0c725432] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[flaskapi] name[37b50b65-be0c-4254-b50b-65be0c725432]
+21:42:00.319 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:42:00.320 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]:
+21:42:00.320 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- node
+21:42:00.322 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:42:00.337 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:42:00.338 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1] requires the following authentication handlers:
+21:42:00.339 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:42:00.341 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:42:00.346 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18001] primary[true]
+21:42:00.346 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:42:00.347 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:42:00.347 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:42:00.348 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1] ready to accept requests on:
+21:42:00.348 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/nodeapi//*]
+21:42:00.348 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 7 ms
+21:42:00.348 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[4044333a-ddef-4f39-8433-3addefaf3970] name[nodeapi] version[v1]
+21:42:00.349 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[nodeapi] id[4044333a-ddef-4f39-8433-3addefaf3970]
+21:42:00.349 [gio.sync-1] [4044333a-ddef-4f39-8433-3addefaf3970] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[nodeapi] name[4044333a-ddef-4f39-8433-3addefaf3970]
+21:42:00.356 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deployment of API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:42:00.356 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - Deploying 1 plan(s) for API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]:
+21:42:00.356 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.m.impl.ApiManagerImpl - 	- springapi
+21:42:00.360 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Creating a new handler for API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:42:00.374 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.core.SecurityProviderLoader - Loading instances for type io.gravitee.gateway.security.core.AuthenticationHandler
+21:42:00.375 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1] requires the following authentication handlers:
+21:42:00.375 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.a.p.s.PlanBasedAuthenticationHandlerEnhancer - 	* key_less
+21:42:00.379 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler is now starting, preparing API context...
+21:42:00.385 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.c.e.l.i.EndpointGroupLifecycleManager - Create new endpoint: name[default] type[HTTP] target[http://host.docker.internal:18003] primary[true]
+21:42:00.385 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.c.e.f.s.SpringFactoriesEndpointFactory - Loading instances for type io.gravitee.gateway.core.endpoint.factory.EndpointFactory
+21:42:00.386 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.connector.AbstractConnector - Create HTTP connector with configuration: 
+21:42:00.386 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.h.connector.AbstractConnector - 	HTTP_1_1 {ConnectTimeout='5000', KeepAlive='true', IdleTimeout='60', MaxChunkSize='8192', MaxPoolSize='100', MaxWaitQueueSize='-1', Pipelining='false', PipeliningLimit='10', TryUseCompression='true'}
+21:42:00.386 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - Handler API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1] ready to accept requests on:
+21:42:00.387 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - 	host[null] - path[/springapi//*]
+21:42:00.387 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.handlers.api.ApiReactorHandler - API handler started in 8 ms
+21:42:00.387 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.r.h.i.DefaultReactorHandlerRegistry - Registering a new handler: Handler API id[ccbdb36c-748d-4250-bdb3-6c748d625027] name[springapi] version[v1]
+21:42:00.387 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.s.a.ApiKeysCacheService - Add a task to refresh api-keys each 10000 MILLISECONDS for API name[springapi] id[ccbdb36c-748d-4250-bdb3-6c748d625027]
+21:42:00.387 [gio.sync-1] [ccbdb36c-748d-4250-bdb3-6c748d625027] INFO  i.g.g.s.s.s.SubscriptionsCacheService - Add a task to refresh subscriptions each 10000 MILLISECONDS for API id[springapi] name[ccbdb36c-748d-4250-bdb3-6c748d625027]
+21:42:03.693 [vert.x-eventloop-thread-15] [] INFO  i.g.r.e.ElasticsearchReporter - Starting Elastic reporter engine... DONE
+21:42:03.693 [vert.x-eventloop-thread-15] [] INFO  i.g.r.e.ElasticsearchReporter - Index mapping template successfully defined
+21:44:25.764 [graviteeio-finalizer] [] INFO  i.g.g.standalone.GatewayContainer - Shutting-down Gravitee.io - API Gateway...
+21:44:25.764 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - Gravitee.io - API Gateway is stopping
+21:44:25.766 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: AlertEventProducerManager
+21:44:25.766 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Alert Engine - Event producer
+21:44:25.766 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: ReporterManager
+21:44:25.766 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Reporter service
+21:44:25.775 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: ManagementService
+21:44:25.775 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Node Management API service
+21:44:25.775 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: ServiceManager
+21:44:25.775 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Plugins - Services Manager
+21:44:25.775 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Endpoints Discovery
+21:44:25.776 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Asynchronous Rate Limit proxy
+21:44:25.776 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service API keys cache repository
+21:44:25.781 [vert.x-eventloop-thread-15] [] INFO  i.g.n.r.vertx.ReporterManagerImpl - Stopping reporter: io.gravitee.node.reporter.vertx.eventbus.EventBusReporterWrapper@75498aed
+21:44:25.781 [vert.x-eventloop-thread-15] [] INFO  i.g.common.service.AbstractService - Destroying service io.gravitee.reporter.elasticsearch.ElasticsearchReporter
+21:44:25.781 [vert.x-eventloop-thread-15] [] INFO  i.g.r.e.ElasticsearchReporter - Stopping Elastic reporter engine... DONE
+21:44:25.777 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Subscriptions cache repository
+21:44:25.783 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Gateway Sync Service
+21:44:25.783 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Node Health-check service
+21:44:25.783 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Gateway - Repository Bridge HTTP Server
+21:44:25.790 [graviteeio-finalizer] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Stop gateway monitor
+21:44:25.791 [vert.x-eventloop-thread-0] [] INFO  i.g.r.bridge.server.BridgeService - HTTP server for bridge has been stopped
+21:44:25.791 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Gateway Heartbeat
+21:44:25.791 [graviteeio-finalizer] [] INFO  i.g.g.s.heartbeat.HeartbeatService - Stop gateway monitor : DONE
+21:44:25.793 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Health-check service
+21:44:25.793 [graviteeio-finalizer] [] INFO  i.g.n.s.monitoring.MonitoringService - Stop node monitor
+21:44:25.793 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service Monitoring Service
+21:44:25.794 [graviteeio-finalizer] [] INFO  i.g.n.s.monitoring.MonitoringService - Stop node monitor : DONE
+21:44:25.797 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: PluginRegistry
+21:44:25.797 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service io.gravitee.plugin.core.internal.PluginRegistryImpl
+21:44:25.797 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: PluginEventListener
+21:44:25.797 [graviteeio-finalizer] [] INFO  i.g.common.service.AbstractService - Destroying service io.gravitee.plugin.core.internal.PluginEventListener
+21:44:25.797 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: ClusterService
+21:44:25.858 [graviteeio-finalizer] [] INFO  i.g.g.standalone.node.GatewayNode - 	Stopping component: VertxEmbeddedContainer
+21:44:25.858 [vert.x-eventloop-thread-2] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-0] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-3] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-4] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-5] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-6] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-8] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-9] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-7] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-1] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.858 [vert.x-eventloop-thread-2] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.858 [vert.x-eventloop-thread-9] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.858 [vert.x-eventloop-thread-1] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-7] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-0] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-3] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-11] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.859 [vert.x-eventloop-thread-11] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-12] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.859 [vert.x-eventloop-thread-8] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-10] [] INFO  i.g.g.s.vertx.ReactorVerticle - Stopping HTTP Server...
+21:44:25.859 [vert.x-eventloop-thread-4] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
+21:44:25.859 [vert.x-eventloop-thread-12] [] INFO  i.g.g.s.vertx.ReactorVerticle - HTTP Server has been correctly stopped
